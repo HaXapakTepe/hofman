@@ -1,0 +1,13 @@
+.block {
+  margin: 60px 0;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__title {
+    @include fluid(font-size, 30px, 64px);
+  }
+}

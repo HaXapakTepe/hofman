@@ -5,6 +5,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const logo = document.querySelector('.logo')
   const menuItem = document.querySelectorAll('.menu__item')
   const socialsLink = document.querySelectorAll('.socials__link')
+  const index = document.querySelectorAll('.index')
+  const goto = document.querySelectorAll('.goto[data-goto]')
+
+  index.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault()
+      window.location.href = '/#step'
+    })
+  })
+
+  if (goto.length > 0) {
+    goto.forEach((link) => {
+      link.addEventListener('click', onMenuLinkClick)
+    })
+
+    function onMenuLinkClick(e) {
+      const link = e.target
+      if (link.dataset.goto && document.querySelector(link.dataset.goto)) {
+        const gotoBlock = document.querySelector(link.dataset.goto)
+        const gotoBlockValue = gotoBlock.getBoundingClientRect().top
+        window.scrollBy({
+          top: gotoBlockValue,
+          behavior: 'smooth',
+        })
+        e.preventDefault()
+      }
+    }
+  }
 
   if (burger) {
     socialsLink.forEach((item) => {
@@ -56,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const lunge = document.querySelectorAll('.lunge')
   lunge.forEach((el) => {
     const lungeHiddenItem = el.querySelectorAll('.lunge__hidden-item')
-    const lungeInput = el.querySelector('.lunge__input')
 
     lungeHiddenItem?.forEach(function (item) {
       const inputField = item.parentNode.previousElementSibling?.querySelector('.lunge__input')
@@ -67,22 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
           item.classList.remove('lunge__hidden-item--active')
         })
         this.classList.add('lunge__hidden-item--active')
-      })
-    })
-
-    lungeInput?.addEventListener('input', function () {
-      const inputValue = lungeInput.value.toLowerCase()
-      let match = false
-
-      lungeHiddenItem.forEach((label) => {
-        const dataContent = label.textContent.toLowerCase()
-
-        if (dataContent.includes(inputValue)) {
-          match = true
-          label.style.display = 'flex'
-        } else {
-          label.style.display = 'none'
-        }
       })
     })
   })
@@ -97,4 +108,47 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const mask = IMask(element, maskOptions)
   }
+
+  const isMobile = {
+    Android: function () {
+      return navigator.userAgent.match(/Android/i)
+    },
+    BlackBerry: function () {
+      return navigator.userAgent.match(/BlackBerry/i)
+    },
+    iOS: function () {
+      return navigator.userAgent.match(/iPhone|iPad|iPod/i)
+    },
+    Opera: function () {
+      return navigator.userAgent.match(/Opera Mini/i)
+    },
+    Windows: function () {
+      return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i)
+    },
+    any: function () {
+      return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()
+    },
+  }
+
+  setTimeout(function () {
+    var content = document.querySelector('.wrapper')
+    content.classList.remove('hidden')
+
+    var opacity = 1
+
+    var opacityTimer = setInterval(function () {
+      var preloader = document.querySelector('.preloader')
+
+      if (isMobile.any()) opacity = Number(opacity) - 0.04
+      else opacity = Number(opacity) - 0.01
+
+      preloader.style.opacity = opacity
+
+      if (opacity < 0) {
+        clearInterval(opacityTimer)
+
+        preloader.remove()
+      }
+    }, 1)
+  }, 1500)
 })

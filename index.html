@@ -16,6 +16,17 @@
 
   <div class="wrapper">
 
+
+    <div class="preloader">
+      <div class="preloader__inner">
+        <div class="preloader__text">
+          HOFMAN
+          <span>GAMES</span>
+        </div>
+      </div>
+    </div>
+
+
     <div class="bg">
       <picture>
         <source class="bg__img" srcset="./assets/images/bg-mobile.png" media="(max-width: 576px)">
@@ -57,7 +68,7 @@
                   </a>
                 </li>
                 <li class="menu__item">
-                  <a class="menu__link" href="#">
+                  <a class="menu__link goto" data-goto=".step" href="#">
                     ИГРАТЬ
                   </a>
                 </li>
@@ -67,17 +78,17 @@
                   </a>
                 </li>
                 <li class="menu__item">
-                  <a class="menu__link" href="#">
+                  <a class="menu__link" href="../pages/refill.html">
                     ДОНАТ
                   </a>
                 </li>
               </ul>
               <div class="socials">
-                <a class="socials__link" href="#">
+                <a class="socials__link" href="https://vk.com/hofman.games" target="_blank">
                   <img class="socials__link-img socials__link-img--vk" src="./assets/images/vk.png" alt="">
                 </a>
-                <a class="socials__link" href="#">
-                  <img class="socials__link-img socials__link-img--dis" src="./assets/images/dis.png" title="" alt="">
+                <a class="socials__link" href="https://discord.gg/sHfbtTc9bc" target="_blank">
+                  <img class="socials__link-img socials__link-img--dis" src="./assets/images/dis.png" alt="">
                 </a>
               </div>
             </nav>
@@ -109,7 +120,7 @@
         </section>
 
 
-        <div class="step">
+        <div class="step" id="step">
           <div class="step__wrapper">
             <div class="container">
               <div class="step__inner">
@@ -137,7 +148,7 @@
                         <p class="step__list-text">
                           <span>1.</span> Установите наш лаунчер для игры на сервере. Чтобы это сделать нажмите кнопку
                           <span>«Скачать
-                            лаунченр»</span> ниже.
+                            лаунчер»</span> ниже.
                         </p>
                         <a class="link" href="#">
                           СКАЧАТЬ ЛАУНЧЕР
@@ -209,18 +220,18 @@
             </div>
           </div>
           <div class="footer__box">
-            <a class="footer__link" href="#">
+            <a class="footer__link" href="../pages/terms.html">
               Пользовательское соглашение
             </a>
-            <a class="footer__link" href="#">
+            <a class="footer__link" href="../pages/privacy-policy.html">
               Политика конфиденциальности
             </a>
           </div>
           <div class="footer__box">
-            <a class="footer__link" href="#">
+            <a class="footer__link" href="https://vk.com/im?media=&sel=-220795977" target="_blank">
               Поддержка в чате
             </a>
-            <a class="footer__link footer__link--alt" href="#">
+            <a class="footer__link footer__link--alt" href="mailto:hofman.crmp@mail.ru">
               hofman.crmp@mail.ru
             </a>
           </div>
