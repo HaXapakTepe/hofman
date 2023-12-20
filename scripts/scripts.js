@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   index.forEach((link) => {
     link.addEventListener('click', (e) => {
       e.preventDefault()
-      window.location.href = '/#step'
+      window.location.href = '/hofman/#step'
     })
   })
 
