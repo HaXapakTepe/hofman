@@ -1,0 +1,39 @@
+.link {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: block;
+  color: #FFF;
+  @include fluid(font-size, 18px, 36px);
+  font-weight: 700;
+  line-height: normal;
+  @include fluid(padding-top, 15px, 22px);
+  @include fluid(padding-bottom, 15px, 22px);
+  @include fluid(padding-left, 12px, 19px);
+  @include fluid(padding-right, 12px, 19px);
+  border-radius: 30px;
+  background-color: #8C6ECC;
+  transition: background-color .23s ease-in-out, color .23s ease-in-out;
+
+  &:hover {
+    background-color: #fff;
+    color: #8C6ECC;
+  }
+
+  &--green {
+    @include fluid(font-size, 18px, 40px);
+    padding-top: 12px;
+    padding-bottom: 12px;
+    @include fluid(padding-left, 15px, 24px);
+    @include fluid(padding-right, 15px, 24px);
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 10px;
+    background-color: #29959C;
+
+    &:hover {
+      background-color: #fff;
+      color: #29959C;
+    }
+  }
+}

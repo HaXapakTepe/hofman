@@ -1,0 +1,19 @@
+.label {
+  max-width: 400px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: relative;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 18px;
+  border-radius: 90px;
+  background: #4f619d;
+  cursor: pointer;
+
+  &__img {
+    @include fluid(width, 40px, 55px);
+    @include fluid(height, 40px, 55px);
+  }
+}

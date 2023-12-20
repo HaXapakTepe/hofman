@@ -1,0 +1,51 @@
+.logo {
+  display: flex;
+  align-items: center;
+
+  &__img {
+    -o-object-fit: contain;
+    object-fit: contain;
+    @include fluid(width, 77px, 126px);
+    @include fluid(height, 84px, 133px);
+  }
+
+  &__text {
+    color: #FFF;
+    font-size: 32px;
+    @include fluid(font-size, 24px, 32px);
+    font-weight: 700;
+    line-height: .9;
+    white-space: nowrap;
+    text-transform: uppercase;
+
+    &--accent {
+      color: #8C6ECC;
+      @include fluid(font-size, 24px, 34px);
+    }
+  }
+
+  &__flex {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &--alt {
+    .logo {
+      &__img {
+        @include fluid(width, 48px, 88px);
+        @include fluid(height, 49px, 86px);
+      }
+
+      &__text {
+        @include fluid(font-size, 20px, 32px);
+        font-style: italic;
+        font-weight: 500;
+
+        &--light {
+          font-weight: 200;
+        }
+      }
+    }
+  }
+}

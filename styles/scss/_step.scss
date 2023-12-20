@@ -1,0 +1,133 @@
+.step {
+  &__wrapper {
+    @include fluid(margin-top, 60px, 380px);
+    @include fluid(margin-bottom, 30px, 37px);
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: .65fr 1fr 1fr;
+  }
+
+  &__item {
+    &--flex {
+      display: flex;
+      gap: 6px;
+    }
+
+    &-title {
+      color: #FFF;
+      @include fluid(font-size, 32px, 48px);
+      font-weight: 700;
+      line-height: normal;
+
+      &--width {
+        width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+
+    &-question {
+      @include fluid(font-size, 150px, 300px);
+      font-weight: 700;
+      line-height: 1.3;
+      text-align: center;
+    }
+
+    &-num {
+      color: #8C6ECC;
+      @include fluid(font-size, 85px, 130px);
+      font-weight: 700;
+      line-height: normal;
+      line-height: .9;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    border-left: 7px solid #fff;
+    @include fluid(padding-left, 15px, 30px);
+    margin-left: -10px;
+    @include fluid(gap, 15px, 30px);
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      @include fluid(gap, 15px, 25px);
+    }
+
+    &-text {
+      color: #FFF;
+      @include fluid(font-size, 20px, 36px);
+      font-weight: 300;
+      line-height: normal;
+
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .step {
+    &__inner {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__item {
+      &:first-child {
+        grid-column: 1/3;
+      }
+
+      &-title {
+        &--width {
+          text-align: center;
+          width: unset;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .step {
+    &__inner {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    &__item {
+      justify-content: center;
+
+      &:first-child {
+        grid-column: unset;
+      }
+
+      &-title {
+        font-size: 20px;
+        text-wrap: balance;
+      }
+
+      &-num {
+        font-size: 52px;
+      }
+
+      &-question {
+        font-size: 100px;
+      }
+    }
+
+    &__list {
+      border-width: 3px;
+
+      &-text {
+        font-size: 16px;
+      }
+    }
+  }
+}

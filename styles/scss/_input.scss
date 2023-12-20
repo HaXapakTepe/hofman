@@ -1,0 +1,27 @@
+.input {
+  all: unset;
+  width: 100%;
+  @include fluid(font-size, 20px, 36px);
+  color: #fff;
+  text-align: center;
+
+  &::-webkit-input-placeholder {
+    color: #939ccb;
+  }
+
+  &::-moz-placeholder {
+    color: #939ccb;
+  }
+
+  &:-ms-input-placeholder {
+    color: #939ccb;
+  }
+
+  &::-ms-input-placeholder {
+    color: #939ccb;
+  }
+
+  &::placeholder {
+    color: #939ccb;
+  }
+}
