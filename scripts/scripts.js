@@ -86,9 +86,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const lungeHiddenItem = el.querySelectorAll('.lunge__hidden-item')
 
     lungeHiddenItem?.forEach(function (item) {
-      const inputField = item.parentNode.previousElementSibling?.querySelector('.lunge__input')
+      const inputField = item.parentNode.previousElementSibling?.querySelector('.lunge__label-text')
       item.addEventListener('click', function () {
-        inputField.value = item.textContent.trim()
+        inputField.textContent = item.textContent.trim()
         item.parentNode.previousElementSibling.click()
         lungeHiddenItem.forEach((item) => {
           item.classList.remove('lunge__hidden-item--active')
